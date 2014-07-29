@@ -2,7 +2,24 @@
 	<head>
 		<title>Chapter 9--Array.</title>
 		<script>
-			
+			var a = new Array();
+			var b = new Array("a","1",0,"[hi]");
+			var c = new Array(10);
+			document.write("The length of array a: " + a.length + ".</br>");
+			document.write(b + "</br>");	
+			var string = [1,2,3,4,5,6,7,8,9];
+			document.writeln(string.join());		
+			document.writeln(string.reverse().join("&"));
+			document.writeln(
+				string.sort(
+					function(a,b){
+						if((a%2==0 && b%2==0)||(a%2!=0 && b%2!=0)){
+							return a-b;
+						}else if (a%2==0 && b%2!=0){
+							return -1;
+						}else return 1;
+					}));
+			document.writeln("</br> string: " + string);
 		</script>
 	</head>
 	<body></body>
