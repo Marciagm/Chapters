@@ -7,10 +7,45 @@
 			var pattern3 = /([@'])[^'"]*\1/;
 			document.write(pattern3.test("@dsfsd@"));
 			//alert(pattern2.test("javascript56897java123"));
-			var pattern4 ;
-			var pattern5 ;
-			var pattern6;
-			//test git commit -a -m 
+			var quote = /"([^"]*)"/g;
+			var text = '"How many people are there?" ,"Five."';
+			document.write("</br>Before: " + text + "</br>");
+			//alert(text.match(quote));
+			text.replace("How","d ");
+			document.write("After: " + text.replace(quote,"9$1 9") + "</br>");
+			var pattern5 = /\d+/g;
+			document.write("match: " + "1 plus 2 and 3".match(pattern5));
+			var pattern6 = /(\w+):\/\/([\w+.]+)\/(\S*)/;
+			var text = "moreinfo/http://v.ifeng.com/v/g~more";
+			var result = text.match(pattern6);
+			if(result != null){
+				document.write("</br>result[0]: " + result[0] + "  result[1]: " + result[1] + "  result[2]: " + result[2] + "  result[3]: " + result[3] + "</br>");
+				document.write("</br>result.index : " + result.index + "result.input: " + result.input + "<br/>");
+			}
+			//alert("result.index " + result.index + result.input);
+			//alert("1, 2, 3 ,4    7,5".split(/\s*,\s*/)[3].length);
+			var zipcode = new RegExp("(\\d{5})", "");
+			console.info(zipcode);
+			var result2 = "1234567abc234566".match(zipcode);
+			//alert(result2[1]);
+			var text2 = "abc4567bb89456asddfdsf23233223234dfasdf  dsfad";
+			//while(zipcode.exec(text2)){
+				//alert(zipcode.lastIndex);
+			//}
+			zipcode.source = "/\w/";
+			//alert(zipcode.source + zipcode.global);
+			//alert(parseInt("d345a6"));
+			var s1 = "string";
+			var s2 = s1;
+			var s3 = "四大名捕 三女神";
+			//alert(s3.match(/[\u4E00-\u9FA5]/g)[1]);
+			var variable = "global";
+			function construc(){
+				var variable =  "local";
+				return function(){return variable};
+				//return new Function("return variable");
+			}
+			alert(construc()());
 		</script>
 	</head>
 	<body>
